@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second HTML Page</title>
+</head>
+<body>
+    <h1>This is the second HTML page</h1>
+    <p>Here is the list of my friends</p>
+    {% for x in list_file %}
+    <p>Name of friend is {{x}}</p>
+    {% endfor %}
+    <!-- 
+        Here we have passed the into the html file using render_template and hence it can be used here in the html file
+        as we can see that list_file is the name of the variable passed we can acces it using the variable here
+     -->
+
+     <p>Lets just explore the names of cities that are famous in INDIA</p>
+     {% for city in list_city %}
+     <p>Name of the city is {{city}}</p>
+     {% endfor %}
+</body>
+</html>

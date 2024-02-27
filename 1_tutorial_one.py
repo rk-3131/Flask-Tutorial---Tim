@@ -8,9 +8,9 @@ app = Flask(__name__)
 @app.route("/")
 # app.route() is a function which is used to give the url to the function so that it will be used in the opening of the site
 # Here / means that the route is defined for the home page or the entry page of the site and hence they will be used for the further processes
-
 def home():
-    return "Hello! this is the home page <h1>Hello<h1>"
+    return "<h1>Hello! This is the home page</h1>"
+
 
 # after the url of the method is set as per the app.route then the function which is defined below it has to be called
 # Here in our case we have called the function home and hence the string which is defined there is also returned here
@@ -19,13 +19,13 @@ def home():
 def about_page():
     return "This is the about page and hence we can give information about us in the about page and hence this page has to have all the information about us and our site"
 
-# app.route("/<get_name>")
-# def greet_name(get_name):
-#     return f"Hello Hello {get_name} it is pleasing to have you on board"
+@app.route("/<get_name>")
+def greet_name(get_name):
+    return f"Hello Hello {get_name} it is pleasing to have you on board"
 
-@app.route("/<name>")
-def user(name):
-    return f"Hello {name}"
+# @app.route("/<name>")
+# def user(name):
+#     return f"Hello {name}"
 
 # This the special use case of the app.route method where we can give name of the variable inside the <> and hence whatever will be the string at that position it can be given as input to function and hence it will be used later for the rendering into html page
 
@@ -41,6 +41,11 @@ def get_admin():
     return redirect(url_for("admin_page"))
 # This is where we have redirected the admin route to myadmin
 # We can add another one or two conditions here so that we will be able to get logging into the admin page only we have the access to enter the admin page
+
+@app.route("/another_admin")
+def get_new_admin():
+    return redirect(url_for("greet_name", get_name="Radhakrushna Mahadik"))
+# this is the code which will be used for passing arguments to the function which takes parameter into the links and hence they reflect the same paramater to the page also
 
 
 if __name__ == '__main__':

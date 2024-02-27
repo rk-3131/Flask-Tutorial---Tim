@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>This is the home page and here we will try to execute the python files</h1>
+    <p>Here is the name which we have obtained after we passed the arguments from the flask file {{content}}</p>
+    <p>Here onwards we will try to execute the python code here in the html file</p>
+    <p>
+        lets just print the number from 1 to 10
+        {% for x in range(1, 11) %}
+        <p>{{x}}</p>
+        {% endfor %}
+        <!-- here we can start the for loop and then 
+            also have to end the for loop by using endfor
+            but to print the variable we have to use the {{}} and then we have to use name of the variable
+        -->
+    </p>
+
+    <p>
+        Here we will print all the even number from the 1 to 20
+        {% for x in range(1, 21)%}
+        {% if x % 2 == 0 %}
+            <p>{{x}}</p>
+            <!-- 
+                Here we have used the if and also if has to ended properly as it has ended in the below line
+             -->
+        {% endif %}
+        {% endfor %}
+    </p>
+</body>
+</html>
